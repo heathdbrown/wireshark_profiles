@@ -1,5 +1,5 @@
 "Any Data in TCP Urgent Field?" tcp.urgent_pointer>0
-"Display TCP Port 443 or 4430 or 4434" tcp.port in {443 4430..4434}
+"Display TCP Port 443 or 4430 or 4434" tcp.port in {443, 4430..4434}
 "Display TCP SYN and non-zero ACK#" tcp.flags.syn==1 && tcp.flags.ack==0 && tcp.ack==0
 "Display TCP SYN plus ACK (Bitwise)" tcp.flags & 0x12
 "Display TCP connection refusal/ACK scan" tcp.flags.reset==1 && tcp.flags.ack==1 && tcp.seq==1 && tcp.ack==1
